@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "description": "debounce directive for vue 2.x.x.",
   "main": "dist/vue-debounce.min.js",
+  "typings": "types/index.d.ts",
+  "files": [
+    "src",
+    "dist/*.js",
+    "types/*.d.ts"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c"
@@ -12,6 +18,10 @@
     "vue",
     "directive"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/a294465800/vue-debounce.git"
+  },
   "author": "SHININGJACK",
   "license": "MIT",
   "devDependencies": {
