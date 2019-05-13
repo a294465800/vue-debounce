@@ -4,34 +4,47 @@ import { Debounce } from "./debounce";
 import { DebounceContext } from "../types";
 
 const component: ComponentOptions<DebounceContext> = {
-    name: "debounce",
-    props: ["timeout", "events"],
-    data() {
-        return {
-            eventsKeys: []
-        };
-    },
-    created() {
-        this.eventsKeys = this.events.split(",");
-    },
-    render() {
-        const vnode: VNode = this.$slots.default[0];
-        const listeners = vnode.componentOptions.listeners;
-        this.eventsKeys.forEach(event => {
-            const fn = listeners[event];
-            if (fn) {
-                listeners[event] = Debounce(fn, this.timeout);
-            }
-        });
+  name: "debounce",
+  props: ["timeout", "events"],
+  data() {
+    return {
+      eventsKeys: []
+    };
+  },
+  created() {
+    this.eventsKeys = this.events.split(",");
+  },
+  render() {
+    const vnode: VNode = this.$slots.default[0];
+    let componentListeners = {};
+    let nativeListeners = {};
 
-        return vnode;
+    // components
+    if (vnode.componentOptions) {
+      componentListeners = vnode.componentOptions.listeners;
     }
+
+    if (vnode.data && vnode.data.on) {
+      nativeListeners = vnode.data.on;
+    }
+    this.eventsKeys.forEach(event => {
+      const cfn = componentListeners[event];
+      const nfn = nativeListeners[event];
+      if (cfn) {
+        componentListeners[event] = Debounce(cfn, this.timeout);
+      } else if (nfn) {
+        nativeListeners[event] = Debounce(cfn, this.timeout);
+      }
+    });
+
+    return vnode;
+  }
 };
 
 const VueDebounce: PluginObject<object> = {
-    install(Vue) {
-        Vue.component("debounce", component);
-    }
+  install(Vue) {
+    Vue.component("Debounce", component);
+  }
 };
 
 export default VueDebounce;

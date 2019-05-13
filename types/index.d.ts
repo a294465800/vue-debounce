@@ -5,3 +5,5 @@ export interface DebounceContext extends Vue {
     events: string
     eventsKey: string[]
 }
+
+export function install (vue: typeof Vue, options: object): void

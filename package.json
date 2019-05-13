@@ -1,6 +1,6 @@
 {
-  "name": "vue-debounce",
-  "version": "1.0.0",
+  "name": "vue-debounce-component",
+  "version": "1.0.1",
   "description": "debounce directive for vue 2.x.x.",
   "main": "dist/vue-debounce.min.js",
   "typings": "types/index.d.ts",
@@ -10,7 +10,6 @@
     "types/*.d.ts"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c"
   },
   "keywords": [
