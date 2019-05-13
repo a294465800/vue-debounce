@@ -1,0 +1,34 @@
+{
+  "name": "vue-debounce",
+  "version": "1.0.0",
+  "description": "debounce directive for vue 2.x.x.",
+  "main": "dist/vue-debounce.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c"
+  },
+  "keywords": [
+    "debounce",
+    "vue",
+    "directive"
+  ],
+  "author": "SHININGJACK",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@typescript-eslint/eslint-plugin": "^1.9.0",
+    "@typescript-eslint/parser": "^1.9.0",
+    "eslint": "^5.16.0",
+    "eslint-plugin-typescript": "^0.14.0",
+    "pre-commit": "^1.2.2",
+    "rollup": "^1.11.3",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-node-resolve": "^4.2.4",
+    "rollup-plugin-typescript": "^1.0.1",
+    "rollup-plugin-uglify": "^6.0.2",
+    "tslib": "^1.9.3",
+    "typescript": "^3.4.5",
+    "vue": "^2.6.10"
+  }
+}
