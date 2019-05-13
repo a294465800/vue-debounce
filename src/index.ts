@@ -33,7 +33,7 @@ const component: ComponentOptions<DebounceContext> = {
       if (cfn) {
         componentListeners[event] = Debounce(cfn, this.timeout);
       } else if (nfn) {
-        nativeListeners[event] = Debounce(cfn, this.timeout);
+        nativeListeners[event] = Debounce(nfn, this.timeout);
       }
     });
 
