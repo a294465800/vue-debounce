@@ -53,9 +53,9 @@ export default {
 
 `timeout` default unit is `ms`, so `:timeout="300"` means `300ms`, you can specify unit like `1s`.`ms` and `s` supports only.
 
-`events` use to specify the event you want to debounce. It allows you to set multiple events using `events="input,change,click"` split with `,`
+`events` use to specify the event you want to debounce. It allows you to set multiple events using `:events="['input','change','click']"`.
 
 | name                       | type             | default         | example         |
 | -------------------------- | ---------------- | ----------------|-----------------|
 | timeout                    |  String/Number   | 300             | 300/300ms/0.3s  |
-| events                     |  String          | /               | input/input,change|
+| events                     |  String/Array    | /               | input/['input','change']|
