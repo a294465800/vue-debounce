@@ -1,6 +1,6 @@
 {
   "name": "vue-debounce-component",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "debounce directive for vue 2.x.x.",
   "main": "dist/vue-debounce.min.js",
   "typings": "types/index.d.ts",
